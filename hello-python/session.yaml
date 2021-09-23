@@ -1,5 +1,5 @@
 
-name: ~hello-k8s-scone
+name: faceapi-25885-27398~hello-k8s-scone
 
 version: "0.2"
 
@@ -17,5 +17,7 @@ services:
 
      environment:
 
-        GREETING: hello from SCONE!!!
+        API_KEY: 8e4bc2ca1d5b4eeba5e4b7205fa80c03
+
+        BASE_URL: https://seyon-face-api.cognitiveservices.azure.com/face/v1.0
 

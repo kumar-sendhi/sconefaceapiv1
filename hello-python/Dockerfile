@@ -9,4 +9,4 @@ ADD . /
 RUN pip install -r requirements.txt
 WORKDIR /app
 EXPOSE 5000
-CMD ["python3", "app.py"]
+CMD ["python3", "server.py"]

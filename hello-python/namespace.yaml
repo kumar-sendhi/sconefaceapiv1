@@ -1,0 +1,15 @@
+
+name: faceapi-25885-27398
+
+
+
+access_policy:
+
+  read:
+
+   - CREATOR
+
+  update:
+
+   - CREATOR
+
