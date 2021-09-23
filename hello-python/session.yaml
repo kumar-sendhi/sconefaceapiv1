@@ -1,0 +1,21 @@
+
+name: ~hello-k8s-scone
+
+version: "0.2"
+
+
+
+services:
+
+   - name: application
+
+     mrenclaves: [67b8017f7083435cb614b87c8daa14303f741a10a2a0bbf5dfabec777cf629b9]
+
+     command: python3 /app/server.py
+
+     pwd: /
+
+     environment:
+
+        GREETING: hello from SCONE!!!
+

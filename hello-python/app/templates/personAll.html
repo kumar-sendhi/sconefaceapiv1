@@ -1,0 +1,27 @@
+{% include 'index.html' %}
+<h1>List of Persons in Person Group</h1>
+<hr>
+<form action="#" method="POST">
+    <div class="container">
+      <label for="persongroups">Choose a Person Group:</label>
+      <select name="persongroups" id="persongroups">
+        {% for group in personGroupList %}
+          <option value="{{group['personGroupId']}}">{{group["name"]}}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="createBtn">Get</button>
+    </div>
+  </form>
+  <br><br>
+<table border="1">
+    <tr>
+        <td>Person Id</td>
+        <td>Person Name</td>
+    </tr>
+    {% for person in personList %}
+        <tr>
+            <td>{{person["personId"]}}</td>
+            <td>{{person["name"]}}</td>
+        </tr>
+    {% endfor %}
+</table>

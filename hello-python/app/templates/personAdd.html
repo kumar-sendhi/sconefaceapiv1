@@ -1,0 +1,26 @@
+{% include 'index.html' %}
+<form action="#" method="POST">
+  <div class="container">
+    <h1>Add Person to Person Group</h1>
+    <hr />
+    <label for="persongroups">Choose a Person Group:</label>
+    <select name="persongroups" id="persongroups">
+      {% for group in personGroupList %}
+        <option value="{{group['personGroupId']}}">{{group["name"]}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <br>
+    <label for="name"><b>Aadhar</b></label>
+    <input
+      type="text"
+      placeholder="Enter Aadhar"
+      name="name"
+      id="name"
+      required
+    />
+
+    <button type="submit" class="createBtn">Add</button>
+  </div>
+</form>
+<p>{{message}}</p>

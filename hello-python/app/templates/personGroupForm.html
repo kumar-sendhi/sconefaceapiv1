@@ -1,0 +1,16 @@
+{% extends "personGroupCreate.html" %}
+{% block formContent %}
+<form action="#" method="POST">
+    <div class="container">
+      <h1>Create Person Group</h1>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+      <button type="submit" class="createBtn">Create</button>
+    </div>
+  
+
+  </form>
+  <p>{{message}}</p>
+{% endblock formContent %}

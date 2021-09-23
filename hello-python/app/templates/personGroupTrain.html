@@ -1,0 +1,15 @@
+{% include 'index.html' %}
+<form action="#" method="POST">
+  <div class="container">
+
+    <label for="persongroups">Choose a Person Group:</label>
+    <select name="persongroups" id="persongroups">
+      {% for group in personGroupList %}
+        <option value="{{group['personGroupId']}}">{{group["name"]}}</option>
+      {% endfor %}
+    </select>
+
+    <button type="submit" class="createBtn">Train</button>
+  </div>
+</form>
+<p>{{message}}</p>

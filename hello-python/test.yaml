@@ -1,0 +1,46 @@
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-python
+spec:
+  selector:
+    matchLabels:
+      app: hello-python
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-python
+    spec:
+      containers:
+      - name: hello-python
+        image: kumarsendhi/hello-python:v6
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        env:
+        - name: GREETING
+          value: howdy!
+        - name: API_KEY
+          value: 8e4bc2ca1d5b4eeba5e4b7205fa80c03
+        - name: BASE_URL
+          value: https://seyon-face-api.cognitiveservices.azure.com/face/v1.0
+        resources:
+          limits:
+            sgx.k8s.io/sgx: 1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-python-service
+spec:
+  selector:
+    app: hello-python
+  ports:
+  - protocol: "TCP"
+    port: 5000
+    targetPort: 5000
+  type: LoadBalancer

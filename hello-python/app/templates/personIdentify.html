@@ -1,0 +1,42 @@
+{% include 'index.html' %}
+<form action="#" method="POST">
+    <div class="container">
+
+      <label for="url"><b>Url</b></label>
+      <input type="text" placeholder="Enter Url" name="url" id="url" required>
+      <br>
+      <label for="persongroups">Choose a Person Group:</label>
+      <select name="persongroups" id="persongroups">
+        {% for group in personGroupList %}
+          <option value="{{group['personGroupId']}}">{{group["name"]}}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <button type="submit" class="createBtn">Identify</button>
+    </div>
+  
+
+  </form>
+  <br>
+  <br>
+  <hr>
+  <table border="1">
+    <tr>
+        <td>Aadhar</td>
+        <td>Confidence</td>
+    </tr>
+    {% for person in identifiedPersonList %}
+      
+        <tr>
+            {% if person["candidates"] | length >0 %}
+            <td>{{person["candidates"][0]['name']}}</td>
+            <td>{{person["candidates"][0]['confidence']}}</td>
+            {% else %}
+            <td>NA</td>
+            <td>NA</td>
+            {% endif %}
+            
+        </tr>
+    {% endfor %}
+</table>
+  <p>{{message}}</p>

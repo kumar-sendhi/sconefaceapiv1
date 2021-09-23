@@ -1,0 +1,15 @@
+{% include 'index.html' %}
+<h1>List of Person Groups</h1>
+<hr>
+<table border="1">
+    <tr>
+        <td>Person Group Id</td>
+        <td>Person Group Name</td>
+    </tr>
+    {% for group in personGroupList %}
+        <tr>
+            <td>{{group["personGroupId"]}}</td>
+            <td>{{group["name"]}}</td>
+        </tr>
+    {% endfor %}
+</table>

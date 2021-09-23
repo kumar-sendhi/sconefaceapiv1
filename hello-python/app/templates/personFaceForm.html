@@ -1,0 +1,13 @@
+{% extends "personFace.html" %}
+{% block formContent %}
+<br><br>
+      <label for="persons">Choose a Person:</label>
+      <select name="persons" id="persons">
+        {% for person in personList %}
+          <option value="{{person['personId']}}">{{person["name"]}}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+      <label for="url"><b>Url</b></label>
+      <input type="text" placeholder="Enter Url" name="url" id="url" required>
+{% endblock formContent %}

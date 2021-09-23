@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+</head>
+<body style="margin:100px 150px 200px 200px">
+
+<ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Person Group</a>
+    <div class="dropdown-content">
+      <a href="/persongroups/create">Create</a>
+      <a href="/persongroups/all">Get All</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Person</a>
+    <div class="dropdown-content">
+      <a href="/persongroups/person/add">Add</a>
+      <a href="/persongroups/person/all">Get All</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Persist Face</a>
+    <div class="dropdown-content">
+      <a href="/persongroups/person/addface">Add</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Train and Identify</a>
+    <div class="dropdown-content">
+      <a href="/persongroups/train">Train Person Group</a>
+      <a href="/persongroups/training">Get Training Status</a>
+      <a href="/identify">Identify</a>
+    </div>
+  </li>
+</ul>
+<br>
+<br>
+
+{% block content %}
+{% endblock content %}
+
+</body>
+</html>

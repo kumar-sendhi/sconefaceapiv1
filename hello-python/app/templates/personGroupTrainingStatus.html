@@ -1,0 +1,20 @@
+{% include 'index.html' %}
+<form action="#" method="POST">
+  <div class="container">
+
+    <label for="persongroups">Choose a Person Group:</label>
+    <select name="persongroups" id="persongroups">
+      {% for group in personGroupList %}
+        {% if group['personGroupId'] == selectedGroupId %}
+        <option value="{{group['personGroupId']}}" selected>{{group["name"]}}</option>
+        {% else %}
+        <option value="{{group['personGroupId']}}">{{group["name"]}}</option>
+        {% endif %}
+        
+      {% endfor %}
+    </select>
+
+    <button type="submit" class="createBtn">Get Training Status</button>
+  </div>
+</form>
+<p>{{message}}</p>
